@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citizen Chat Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='chat_assistant.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <header>
+      <h1>Citizen Chat Assistant</h1>
+      <a href="/" class="back-link">Back to Home</a>
+    </header>
+
+    <main>
+      <h2>Ask the Assistant</h2>
+      <form id="chatForm" onsubmit="handleSubmit(event)">
+        <label for="userQuestion">Ask a Question:</label>
+        <input type="text" id="userQuestion" name="question" required />
+        <button type="submit">Submit</button>
+      </form>
+      <div id="chatResponse"></div>
+    </main>
+  </div>
+
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const input = document.getElementById("userQuestion").value.trim();
+      if (!input) return;
+
+      document.getElementById("chatResponse").innerHTML = "<i>Thinking...</i>";
+
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ message: input })
+      });
+
+      const data = await response.json();
+      document.getElementById("chatResponse").innerHTML = 
+        `<b>You:</b> ${input}<br><b>AI:</b> ${data.reply}`;
+    }
+  </script>
+</body>
+</html>

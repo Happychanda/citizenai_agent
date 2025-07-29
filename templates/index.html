@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citizen AI — Next-Gen Government Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700,600,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body>
+    <style>
+
+        :root {
+    --main-pink: rgba(255, 105, 180, 0.10);
+    --main-border: #ffaec9;
+    --main-white: #fff;
+    --nav-active: #ff61ac;
+    --nav-text: #23395d;
+    --gradient-main: linear-gradient(120deg, #fff 60%, #ffcbf5 100%);
+    --shadow: 0 6px 24px rgba(255, 105, 180, 0.12);
+    --radius: 28px;
+    --team-bg: linear-gradient(90deg, #ffe0ef 0%, #f5f2ff 85%);
+}
+
+html,
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--gradient-main);
+    min-height: 100vh;
+    color: #212534;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky, big header and navbar */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: pink;
+    border-bottom: 3px solid var(--main-border);
+    box-shadow: var(--shadow);
+    padding: 2.2rem 0 1.2rem;
+    transition: padding 0.2s;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo-anim {
+    font-size: 2.6rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff70ad, #7a53c9 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: font-size 0.24s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    letter-spacing: 2px;
+    animation: logoGlow 2.5s alternate infinite;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px #ff61ac77;
+    background: linear-gradient(135deg, #ffeedf 60%, #ff70ad 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: logoSpin 8s linear infinite;
+}
+
+@keyframes logoGlow {
+    0% {
+        text-shadow: 0 0 6px #ffcbf4;
+    }
+
+    100% {
+        text-shadow: 0 0 16px #ff61ac;
+    }
+}
+
+@keyframes logoSpin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Navbar */
+.navbar {
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.10rem;
+    border-radius: 8px;
+    padding: 0.4rem 1.1rem;
+    transition: background 0.18s, color 0.14s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    background: var(--nav-active);
+    color: white;
+    transition: background 0.2s, color 0.18s;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 18px;
+}
+
+.nav-toggle span {
+    height: 4px;
+    width: 32px;
+    background: var(--nav-active);
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+    .header-wrapper {
+        flex-direction: row;
+        gap: 16px;
+        margin-right: 10px;
+    }
+
+
+    .nav-links {
+        flex-direction: column;
+        background: rgba(255, 105, 180, 0.25);
+        position: absolute;
+        right: 24px;
+        top: 75px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        min-width: 170px;
+        display: none;
+        z-index: 2002;
+        margin: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+        animation: fadeIn 0.3s;
+    }
+
+    .nav-links li {
+        text-align: right;
+        margin: 10px 18px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* = EMPOWERING HERO SECTION = */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--main-pink);
+    margin-bottom: 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem 1.5rem 1.2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #ff61ac;
+    background: linear-gradient(90deg, #18475a 15%, #ff61ac 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.41rem;
+    color: #646477;
+    margin-bottom: 1.3rem;
+    font-weight: 500;
+    animation: fadeContent 1.2s;
+}
+
+@keyframes fadeContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Let's Chat Button */
+.lets-chat-btn {
+    background: linear-gradient(90deg, #ff61ac, #fad0c4 80%);
+    color: #fff;
+    font-size: 1.18rem;
+    font-weight: 700;
+    padding: 0.8rem 2.3rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1.1rem;
+    box-shadow: 0 1px 10px #fad0c467;
+    cursor: pointer;
+    transition: background 0.23s, color 0.17s, transform 0.16s;
+    animation: pulseBtn 1.2s infinite alternate;
+}
+
+.lets-chat-btn:hover {
+    background: #fff;
+    color: #ff61ac;
+    border: 1px solid #ff61ac;
+    transform: scale(1.05);
+}
+
+@keyframes pulseBtn {
+    0% {
+        box-shadow: 0 2px 12px #ffb6c155;
+    }
+
+    100% {
+        box-shadow: 0 6px 22px #ffb6c155;
+    }
+}
+
+/* for abot section  */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.about-section {
+  background: #110556;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1 1 600px;
+  color: rgb(36, 82, 166);
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
+.about-text h2 span {
+  color: #6c63ff;
+}
+
+.about-text .lead {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.about-box {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.about-box:hover {
+  transform: translateY(-4px);
+}
+
+.about-box h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.about-box h3 i {
+  color: #6c63ff;
+  margin-right: 10px;
+}
+
+.about-box p, .about-box ul {
+  font-size: 15px;
+  color: #555;
+}
+
+.about-box ul {
+  padding-left: 20px;
+  list-style: disc;
+  margin: 0;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: left;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-box {
+    padding: 16px 20px;
+  }
+}
+
+
+/* .iconic { */
+
+.iconic-section {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-between;
+  gap: 20px;
+  /* background: linear-gradient(135deg, #d488c5, #ffdde1); */
+  padding: 40px 20px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.feature {
+  flex: 1 1 200px;
+  max-width: 250px;
+  color: white;
+}
+
+.icon-box {
+  font-size: 36px;
+  padding: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.icon-box i {
+  color: #fff;
+}
+
+.purple {
+  background: #7f00ff;
+}
+
+.teal {
+  background: #00c6a2;
+}
+
+.green {
+  background: #00c853;
+}
+
+.orange {
+  background: #ff9800;
+}
+
+.feature h3 {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* goverment serivice 2 nd section */
+.services-section {
+  padding: 40px 20px;
+  /* background: #f9f9ff; */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  text-align: left;
+  transition: 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
+@media screen and (max-width: 450px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .iconic-section {
+    flex-direction: column;
+    align-items: center;
+  }
+    
+}
+
+/* Icon background color classes */
+.blue { background-color: #3f51b5; }
+.pink { background-color: #f06292; }
+.green { background-color: #4caf50; }
+.purple { background-color: #9c27b0; }
+.mint { background-color: #00bfa5; }
+.lavender { background-color: #7986cb; }
+.lightpink { background-color: #f48fb1; }
+.lightgreen { background-color: #81c784; }
+.yellow { background-color: #fbc02d; }
+.orange { background-color: #ff8a65; }
+.cyan { background-color: #4dd0e1; }
+.red { background-color: #e57373; }
+
+
+
+
+/* ========== COMMON SECTIONS ========== */
+.section {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 2.7rem 1.5rem 2.3rem 1.5rem;
+    /* background: var(--main-pink); */
+    /* border-radius: var(--radius); */
+    /* box-shadow: var(--shadow); */
+}
+
+.section-title {
+    font-size: 2.1rem;
+    color: #ff61ac;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    text-align: center;
+    animation: fadeContent 1s;
+    
+}
+
+.works-list {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.work-card {
+    background: #fff;
+    border-radius: 16px;
+    min-width: 250px;
+    max-width: 275px;
+    box-shadow: 0px 5px 6px ;
+    padding: 1.5rem 1rem 1rem 1rem;
+    color: #313358;
+    font-weight: 600;
+    transition: box-shadow 0.16s, transform 0.16s;
+    margin-bottom: 10px;
+}
+
+.work-card:hover {
+    /* box-shadow: 0 6px 18px #ffb6c1ad; */
+    transform: scale(1.03);
+}
+
+.work-card h3 {
+    color: #ff61ac;
+    margin-bottom: 5px;
+    font-size: 1.14rem;
+}
+
+/* Feedback & contact */
+form input,
+form textarea {
+    width: 96%;
+    max-width: 410px;
+    margin: 7px 0;
+    border-radius: 7px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ffb6c1;
+    box-shadow: 0 1px 6px #ffb6c120;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background: linear-gradient(90deg, #ff61ac, #fad0c4);
+    border: none;
+    color: #23395d;
+    font-weight: 700;
+    font-size: 1.09rem;
+    padding: 0.7rem 1.7rem;
+    border-radius: 7px;
+    margin-top: 10px;
+    box-shadow: 0 1px 10px #fad0c467;
+    cursor: pointer;
+    transition: background 0.18s, color 0.15s;
+}
+
+form button:hover {
+    background: #fff;
+    color: #ff61ac;
+    border: 1px solid #ff61ac;
+}
+
+/* Footer */
+footer {
+    background: var(--main-pink);
+    border-top: 2px solid #ffb6c1;
+    color: #58597e;
+    max-width: 100%;
+    margin: auto;
+    padding: 1.4rem 1rem 1.1rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+    margin-top: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-left {
+    font-size: 1rem;
+}
+
+.footer-socials a {
+    color: #ff61ac;
+    font-size: 1.3rem;
+    margin-left: 11px;
+    text-decoration: none;
+    transition: color 0.16s;
+}
+
+.footer-socials a:hover {
+    color: #23395d;
+}
+
+@media (max-width: 700px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-title,
+    .hero h1 {
+        font-size: 1.19rem;
+    }
+
+    .ai-agent-title {
+        font-size: 1.28rem;
+    }
+}
+
+/* === DASHBOARD MODAL & TEAM === */
+.dashboard-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 188, 225, 0.46);
+    z-index: 4000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeModal 0.25s;
+}
+
+.dashboard-bg.active {
+    display: flex;
+}
+
+@keyframes fadeModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dashboard-modal {
+    background: #fff;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 22px;
+    box-shadow: 0 8px 44px #ffb6c166;
+    padding: 2rem 2.3rem;
+    position: relative;
+    animation: fadeContent 0.9s;
+}
+
+.dashboard-modal h2 {
+    color: #ff61ac;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.7rem;
+}
+
+.dashboard-content ul {
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.09rem;
+    color: #313358;
+    list-style: none;
+}
+
+.dashboard-content li {
+    margin-bottom: 0.6em;
+}
+
+/* Team animation */
+.dashboard-team-title {
+    font-weight: 700;
+    color: #ff61ac;
+    margin-top: 1.1rem;
+    font-size: 1.12rem;
+    letter-spacing: 1px;
+    text-align: left;
+    animation: fadeContent 1.3s;
+}
+
+.team-grid {
+    margin-top: 0.4rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    justify-content: center;
+    background: var(--team-bg);
+    border-radius: 13px;
+    padding: 1rem 0.4rem 0.2rem 0.4rem;
+    animation: fadeContent 1.5s;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85px;
+    margin-bottom: 10px;
+    animation: teamPulse 1.2s infinite alternate;
+    opacity: 0.87;
+}
+
+@keyframes teamPulse {
+    0% {
+        box-shadow: 0 0 8px #ffb6c110;
+    }
+
+    100% {
+        box-shadow: 0 0 20px #ffb6c122;
+    }
+}
+
+.team-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #ffb6c144;
+    object-fit: cover;
+    margin-bottom: 0.4em;
+    border: 2px solid #ff61ac;
+}
+
+.team-name {
+    font-size: 1.06rem;
+    font-weight: 600;
+    color: #7a53c9;
+}
+
+.team-role {
+    font-size: 0.93rem;
+    color: #847cad;
+}
+    </style>
+
+  <header>
+    <div class="header-wrapper">
+      <span class="logo-anim">
+        <span class="logo-img">🤖</span>
+        Citizen AI
+      </span>
+      <nav class="navbar">
+        <div class="nav-toggle" id="navToggle">
+          <span></span> <span></span> <span></span>
+
+        
+
+        </div>
+        <ul class="nav-links" id="navMenu">
+         <li> <a href="/about">About</a></li>
+         <li><a href="/contact">Contact</a></li>
+
+          <li><a href="#feedback">Feedback</a></li>
+          
+          <li><a href="maindashboard.html" id="dashboardNav">Dashboard</a></li>
+           <li><a href="/assistant"> Chat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- EMPOWERING HERO SECTION -->
+  <section class="hero">
+    <h1>Empowering Citizens, On Demand</h1>
+    <p>
+      <b>Citizen AI</b>: The intelligent, unified platform for quick, reliable, and secure government services, support,
+      and information — beautifully reimagined.
+    </p>
+    {# <button class="lets-chat-btn">Let's Chat</button> #}
+
+    <a href="/assistant">
+  <button class="lets-chat-btn">Let's Chat</button>
+</a>
+
+    
+    
+       
+    <div class="iconic-section">
+  <div class="feature">
+    <div class="icon-box purple"><i class="fas fa-brain"></i></div>
+    <h3>Advanced AI Brain</h3>
+    <p>Powered by cutting-edge machine learning for intelligent, context-aware responses.</p>
+  </div>
+  <div class="feature">
+    <div class="icon-box teal"><i class="fas fa-microchip"></i></div>
+    <h3>Smart Processing</h3>
+    <p>Real-time natural language understanding and intelligent response.</p>
+  </div>
+  <div class="feature">
+    <div class="icon-box green"><i class="fas fa-shield-alt"></i></div>
+    <h3>AI-Powered Security</h3>
+    <p>Advanced encryption and AI-driven threat detection for maximum data safety.</p>
+  </div>
+  <div class="feature">
+    <div class="icon-box orange"><i class="fas fa-bolt"></i></div>
+    <h3>Lightning Fast</h3>
+    <p>Instant AI responses and predictive assistance for seamless user experience.</p>
+  </div>
+</div>
+
+  </section>
+    
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="about-content">
+
+    <div class="about-text">
+      <h2>About <span>Citizen AI</span></h2>
+      <p class="lead">
+        <strong>Citizen AI</strong> leverages the power of modern artificial intelligence to make government interaction
+        effortless — from accessing vital documents to navigating public services with security, speed, and inclusivity in mind.
+      </p>
+
+      <div class="about-box">
+        <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+        <p>To simplify and enhance the citizen experience with government services through AI-driven solutions.</p>
+      </div>
+
+      <div class="about-box">
+        <h3><i class="fas fa-eye"></i> Our Vision</h3>
+        <p>To create a world where every citizen can access government services seamlessly, anytime, anywhere.</p>
+      </div>
+
+      <div class="about-box">
+        <h3><i class="fas fa-gem"></i> Core Values</h3>
+        <ul>
+          <li>Transparency</li>
+          <li>Accessibility</li>
+          <li>Innovation</li>
+          <li>Security</li>
+        </ul>
+      </div>
+
+      <div class="about-box">
+        <h3><i class="fas fa-check-circle"></i> Why Choose Citizen AI?</h3>
+        <p>We combine cutting-edge AI technology with a user-friendly interface. Our platform is intuitive, secure,
+          and always available, ensuring you get the support you need, when you need it.</p>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='img/chatbot-artificial-intelligence-technology-concept-artificial-intelligence-technology_714605-1457.avif') }}" alt="AI Chatbot" width="400">
+      
+    </div>
+    
+
+  </div>
+</section>
+
+  <!-- TYPES OF WORK -->
+  <section class="section" id="works">
+    <div class="section-title">What Types of Work Does Citizen AI Do?</div>
+    <div class="works-list">
+
+      <div class="work-card">
+        <h3>Scheme/Benefit Access</h3>
+        Find, check eligibility, and apply for government welfare programs.
+      </div>
+
+      <div class="work-card">
+        <h3>Application Tracking</h3>
+        Get real-time updates and SMS/email notifications for government processes.
+      </div>
+      <div class="work-card">
+        <h3>Automated Chat Support</h3>
+        24/7 chatbot for instant answers and assisted self-service.
+      </div>
+      <div class="work-card">
+        <h3>Local Office Finder</h3>
+        Fast search for nearby government offices and health centers.
+      </div>
+
+      <div class="work-card">
+        <h3>Multi-language Accessibility</h3>
+        Language options for India's diverse citizens.
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-title">Government Services at Your Fingertips</div>
+   
+    <!-- Citizen Services Section -->
+<section class="services-section">
+  <div class="services-grid">
+    
+    <div class="service-card">
+      <div class="icon-container blue"><i class="fas fa-file-alt"></i></div>
+      <h3>Document Services</h3>
+      <p>Birth certificates, permits, licenses and official documents</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container pink"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Report Issues</h3>
+      <p>Potholes, streetlights, noise complaints and city maintenance</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container green"><i class="fas fa-car"></i></div>
+      <h3>Transportation</h3>
+      <p>Public transit, parking permits, and traffic information</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container purple"><i class="fas fa-home"></i></div>
+      <h3>Housing Services</h3>
+      <p>Housing assistance, property taxes, and building permits</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container mint"><i class="fas fa-briefcase"></i></div>
+      <h3>Business Services</h3>
+      <p>Business licenses, permits, and economic development</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container lavender"><i class="fas fa-graduation-cap"></i></div>
+      <h3>Education</h3>
+      <p>School enrollment, educational programs, and resources</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container lightpink"><i class="fas fa-heartbeat"></i></div>
+      <h3>Health Services</h3>
+      <p>Public health, vaccination records, and health programs</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container lightgreen"><i class="fas fa-leaf"></i></div>
+      <h3>Environment</h3>
+      <p>Recycling, environmental permits, and green initiatives</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container yellow"><i class="fas fa-file-invoice-dollar"></i></div>
+      <h3>Pay Bills</h3>
+      <p>Utilities, taxes, fines, and government service fees</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container orange"><i class="fas fa-users"></i></div>
+      <h3>Community</h3>
+      <p>Events, volunteer opportunities, and community programs</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container cyan"><i class="fas fa-calendar-check"></i></div>
+      <h3>Appointments</h3>
+      <p>Schedule meetings with government offices and officials</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-container red"><i class="fas fa-exclamation-triangle"></i></div>
+      <h3>Emergency Info</h3>
+      <p>Emergency services, alerts, and safety information</p>
+    </div>
+
+  </div>
+</section>
+
+  </section>
+ 
+<!-- FEEDBACK SECTION -->
+<section class="section" id="feedback">
+  <div class="section-title">Feedback & Suggestions</div>
+  <form id="feedbackForm">
+    <input type="text" id="fbName" name="fbName" placeholder="Name (optional)" />
+    <input type="email" id="fbEmail" name="fbEmail" placeholder="Email (optional)" />
+    <textarea id="fbMessage" name="fbMessage" rows="4" placeholder="Type your feedback here..." required></textarea>
+    <button type="submit">Send Feedback</button>
+    <div id="fbResponse">Thank you for your feedback!</div>
+  </form>
+</section>
+
+ 
+  <!-- DASHBOARD MODAL WITH TEAM INFO -->
+  <div class="dashboard-bg" id="dashboardModal">
+    <div class="dashboard-modal">
+      <button id="closeModalBtn"
+        style="position:absolute; top:18px;right:20px; background:#ffb6c1; border:none; border-radius:50%; width:34px; height:34px; font-size:1.28rem; color:#212534; font-weight:800; cursor:pointer;">&times;</button>
+      <h2>Citizen AI Dashboard</h2>
+      <div class="dashboard-content">
+        <ul>
+          <li>Active Applications: <b>2</b></li>
+          <li>Recent Services: Driving License Renewal, Scheme Status</li>
+          <li>1 new update on your Welfare Scheme Application</li>
+          <li>Support Chat: <button
+              style="margin-left:6px; background:#ffd6e0;color:#ff61ac;padding:4px 12px;border:none; border-radius:6px;"
+              onclick="alert('customer support chat coming soon!')">Chat</button>
+          </li>
+        </ul>
+        <div class="dashboard-team-title">Meet the Team</div>
+        <div class="team-grid" id="teamGrid">
+          <!-- Team avatars animated here -->
+          <div class="team-member">
+            <img src="{{ url_for('static', filename='img/download.png') }}" alt="Citizen AI Image"  class="team-avatar"/>
+
+            <div class="team-name">Happy-chanda</div>
+            <div class="team-role">team-leader</div>
+          </div>
+          <div class="team-member">
+            <img src="{{ url_for('static', filename='img/images.png') }}" alt="Citizen AI Image"  class="team-avatar"/>
+
+            <div class="team-name">lakshit-Yaduvanshi</div>
+            <div class="team-role">team-member</div>
+          </div>
+          <div class="team-member">
+            <img src="{{ url_for('static', filename='img/images (1).png') }}" alt="AI Banner" class="team-avatar" />
+            <div class="team-name">Raj-sharma</div>
+            <div class="team-role">team-member</div>
+          </div>
+          <div class="team-member">
+            <img src="{{ url_for('static', filename='img/download (1).png') }}" alt="AI Banner" class="team-avatar" />
+            <div class="team-name">krishna-</div>
+            <div class="team-role">team-member</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        © 2025 Citizen AI
+      </div>
+      <div class="footer-socials">
+        <a href="https://facebook.com/" title="Facebook" target="_blank">🔵</a>
+        <a href="https://twitter.com/" title="Twitter" target="_blank">🐦</a>
+        <a href="https://instagram.com/" title="Instagram" target="_blank">📸</a>
+        <a href="https://linkedin.com/" title="LinkedIn" target="_blank">💼</a>
+      </div>
+    </div>
+    <div style="text-align:center; color:#9091b3; font-size:0.98rem;">
+      Made for citizens — Designed to serve India and beyond.
+    </div>
+     <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-title">Contact Citizen AI Team</div>
+    <p>
+      <b>Email:</b> <a href="" onclick="prompt('Please enter your name');">Citizenai123@gmail.com</a><br />
+      <b>Phone:</b> <a href="tel:+911123456789">+91 11 23456789</a><br />
+
+    </p>
+  </section>
+  </footer>
+  <script>
+    // Navbar open/close
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 900) navMenu.classList.remove('open');
+      });
+    });
+    // Dashboard Modal
+    const dashboardNav = document.getElementById("dashboardNav");
+    const dashboardModal = document.getElementById("dashboardModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    dashboardNav.addEventListener("click", function (e) {
+      e.preventDefault(); dashboardModal.classList.add('active');
+    });
+    closeModalBtn.addEventListener("click", function () {
+      dashboardModal.classList.remove('active');
+    });
+    dashboardModal.addEventListener('click', function (e) {
+      if (e.target === dashboardModal) dashboardModal.classList.remove('active');
+    });
+    // Feedback Form Handler
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("fbResponse").style.display = "block";
+      document.getElementById("fbResponse").innerText = "Thank you for your valuable feedback!";
+      setTimeout(() => {
+        document.getElementById("fbResponse").style.display = "none";
+        document.getElementById("fbMessage").value = "";
+      }, 3400);
+    });
+  </script>
+</body>
+
+</html>

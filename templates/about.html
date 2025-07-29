@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen AI - About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: linear-gradient(to right, #e4d5f7, #fbe8ff); /* SMEC-like smooth gradient */
+      --header-color: #6a1b9a;
+      --section-bg: #ffffff;
+      --text-dark: #2b2b2b;
+      --accent: #ab47bc;
+      --radius: 16px;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--header-color);
+      padding: 2rem 1rem;
+      color: white;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    header h1::before {
+      content: "🤖";
+      font-size: 2.4rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffccff;
+    }
+
+    section {
+      width: 100%;
+      background: var(--section-bg);
+      padding: 2rem;
+      margin: 1rem 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .learn-ai {
+      background: #f3e7fa;
+    }
+
+    .learn-ai iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+    }
+
+    .fixed-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .fixed-button:hover {
+      background: #8e24aa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>About Citizen AI</h1>
+    <nav>
+      <a href="/"> Home</a>
+      <a href="/assistant"> Chat</a>
+
+      
+      
+    </nav>
+  </header>
+
+  <section>
+    <h2>What is Citizen AI?</h2>
+    <p><strong>Citizen AI</strong> is a powerful, intelligent citizen engagement platform designed to transform how the public interacts with government services. It brings together Artificial Intelligence, real-time analytics, and multilingual support to provide a transparent, accessible, and efficient governance experience for all.</p>
+  </section>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>We aim to <strong>democratize AI</strong> and make it understandable and usable for every citizen. Our focus is on ensuring that AI is ethical, inclusive, and human-centric. Citizen AI strives to improve civic engagement, foster transparency, and drive meaningful public service innovation.</p>
+  </section>
+
+  <section>
+    <h2>Project Description</h2>
+    <p>Built with technologies like <strong>Flask, IBM Watson, and IBM Granite Models</strong>, the Citizen AI system is engineered to automate interactions, analyze public sentiment, and generate actionable insights for government departments. It enables seamless and intelligent communication between citizens and government bodies, improving trust and satisfaction.</p>
+  </section>
+
+  <section>
+    <h2>Scenario 1: Real-Time Conversational AI Assistant</h2>
+    <p>This assistant serves as the citizen's direct interface with the system. Citizens can ask questions or submit service-related queries and receive immediate AI-generated responses based on real-time natural language understanding. Available 24/7, it ensures instant support and smart automation of routine inquiries.</p>
+  </section>
+
+  <section>
+    <h2>Scenario 2: Citizen Sentiment Analysis</h2>
+    <p>By analyzing feedback and comments from citizens, Citizen AI assesses the overall public sentiment on policies and services. It uses AI to classify this feedback as positive, neutral, or negative. This information is then visualized to help officials understand what matters most to people and respond accordingly.</p>
+  </section>
+
+  <section>
+    <h2>Scenario 3: Dynamic Analytics Dashboard</h2>
+    <p>A centralized dashboard allows officials to view key metrics like service ratings, feedback trends, sentiment percentages, and user engagement statistics. By transforming raw data into charts and alerts, it enables data-driven governance and continuous service improvement.</p>
+  </section>
+
+  <section class="learn-ai">
+    <h2>Learn AI with Citizen AI</h2>
+    <p>Explore the foundation of artificial intelligence through our easy-to-understand, interactive content. We break down concepts like machine learning, sentiment analysis, NLP, and chatbot development in simple language. Whether you're a student, a policymaker, or just curious—this is for you.</p>
+    <ul>
+      <li>Understand how AI works behind the scenes</li>
+      <li>See how government services become smarter using NLP</li>
+      <li>Experience how real-time AI models respond to users</li>
+      <li>Learn how your feedback shapes the system's decisions</li>
+    </ul>
+
+    <!-- Replace below with your actual AI-generated video -->
+    <iframe src="https://www.youtube.com/embed/z-EtmaFJieY" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <button class="fixed-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Top</button>
+
+</body>
+
+</html>

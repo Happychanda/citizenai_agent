@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background: #0b0c17;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff4d4d;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #0b0c17;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 1rem;
+        border-left: 1px solid #333;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .contact-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 5%;
+      background: linear-gradient(to right, #0b0c17, #1a1c2c);
+    }
+
+    .contact-container {
+      max-width: 600px;
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 77, 77, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+    }
+
+    h3 {
+      color: #ff4d4d;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #c0c0c0;
+    }
+
+    .contact-details {
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .chat-btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #e63946;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: #ff4d4d;
+      margin-right: 15px;
+      font-size: 22px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+
+    /* Modal Form Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #ff4d4d;
+      margin-bottom: 15px;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #222;
+      color: white;
+    }
+
+    .modal-content button {
+      background-color: #ff4d4d;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #e63946;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><i>Citizen AI</i></div>
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    <nav id="navMenu">
+      <a href="/">Home</a>
+      
+      
+      
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <h1>Contact Me</h1>
+      <h3>Let's Work Together</h3>
+      <p>I will help you in your next project. Contact me using the details below.</p>
+
+      <div class="contact-details">
+        <p><strong>Email:</strong> citizenai123@gmail.com</p>
+        <p><strong>Phone:</strong> +91 96078*****</p>
+      </div>
+
+      <button class="chat-btn" onclick="openForm()">Let's Chat</button>
+
+      <div class="social-icons">
+        <a onclick="alert('welcome')"><i class="fab fa-linkedin-in"></i></a>
+        <a onclick="alert('welcome')"><i class="fab fa-instagram"></i></a>
+        <a onclick="alert('welcome')"><i class="fab fa-twitter"></i></a>
+        <a onclick="alert('welcome')"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Form -->
+  <div class="modal" id="contactForm">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Send a Message</h2>
+      <form action="https://formsubmit.co/happychanda308@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Your mail" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('show');
+    }
+
+    function openForm() {
+      document.getElementById("contactForm").style.display = "flex";
+    }
+
+    function closeForm() {
+      document.getElementById("contactForm").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
