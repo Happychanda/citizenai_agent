@@ -1,5 +1,7 @@
 Here is a professional GitHub README for your Citizen AI – Intelligent Citizen Engagement Platform built using Hugging Face models (Granite LLM and Sentiment Analysis), designed to run in Google Colab:
 
+project link : https://citizenai3.pythonanywhere.com/
+
 🏛️ Citizen AI – Intelligent Citizen Engagement Platform
 Citizen AI is an intelligent, AI-powered platform designed to revolutionize how governments interact with the public. Built using IBM Granite LLMs from Hugging Face and Flask-free Python, this project enables seamless citizen engagement via real-time chat, sentiment analysis, and actionable dashboards — all deployable in Google Colab.
 
@@ -29,7 +31,7 @@ Language	Python
 🔐 Authentication Required
 The IBM Granite model on Hugging Face is gated. To access it:
 
-Go to https://huggingface.co/settings/tokens
+Go to https://citizenai3.pythonanywhere.com/
 Create a new token (with read access)
 Login in Colab:
 from huggingface_hub import login
